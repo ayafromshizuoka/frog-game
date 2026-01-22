@@ -47,15 +47,17 @@
         const runner = Runner.create();
         Render.run(render);
         Runner.run(runner, engine);
-// 【修正前】
-const ground = Bodies.rectangle(WIDTH/2, HEIGHT -50, WIDTH, 50, { isStatic: true, render: { fillStyle: '#81c784' } });
+        // 【修正のポイント】古い ground の記述を消して、これだけにします
+        const ground = Bodies.rectangle(WIDTH / 2, HEIGHT - 5, WIDTH, 10, { 
+        isStatic: true, 
+        render: { fillStyle: '#81c784' } 
+        });
 
-// 【修正後】地面を少し下げ、厚みを薄くしてピタッと着地させます
-const ground = Bodies.rectangle(WIDTH/2, HEIGHT - 5, WIDTH, 10, { isStatic: true, render: { fillStyle: '#81c784' } });
-       
-        const leftWall = Bodies.rectangle(-25, HEIGHT/2, 50, HEIGHT, { isStatic: true });
-        const rightWall = Bodies.rectangle(WIDTH + 25, HEIGHT/2, 50, HEIGHT, { isStatic: true });
-        World.add(engine.world, [ground, leftWall, rightWall]);
+       const leftWall = Bodies.rectangle(-25, HEIGHT / 2, 50, HEIGHT, { isStatic: true });
+       const rightWall = Bodies.rectangle(WIDTH + 25, HEIGHT / 2, 50, HEIGHT, { isStatic: true });
+
+       // ここで地面と壁を世界に追加します
+       World.add(engine.world, [ground, leftWall, rightWall]);
 
         let score = 0;
         let currentLevel = 0;
@@ -138,5 +140,6 @@ const ground = Bodies.rectangle(WIDTH/2, HEIGHT - 5, WIDTH, 10, { isStatic: true
 </body>
 
 </html>
+
 
 
