@@ -32,11 +32,12 @@
         const LINE_Y = 150;
 
         // カエル9種類に合わせてサイズとスコアを調整
-        const FROG_DATA = [
-            { radius: 55, score: 2 }, { radius: 62, score: 4 }, { radius: 72, score: 8 },
-            { radius: 82, score: 16 }, { radius: 92, score: 32 }, { radius: 102, score: 64 },
-            { radius: 112, score: 128 }, { radius: 122, score: 256 }, { radius: 135, score: 512 }
-        ];
+       // 半径（radius）を少し小さく、当たり判定を内側に絞ります
+const FROG_DATA = [
+    { radius: 12, score: 2 }, { radius: 18, score: 4 }, { radius: 26, score: 8 },
+    { radius: 34, score: 16 }, { radius: 42, score: 32 }, { radius: 50, score: 64 },
+    { radius: 58, score: 128 }, { radius: 68, score: 256 }, { radius: 80, score: 512 }
+];
 
         const engine = Engine.create();
         const render = Render.create({
@@ -140,6 +141,7 @@
 </body>
 
 </html>
+
 
 
 
