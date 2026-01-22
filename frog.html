@@ -84,8 +84,8 @@ function createFrog(x, y, level) {
                 texture: `${IMG_BASE_URL}kaeru${level + 1}.png`,
                 // ここが重要！画像の元サイズが小さくても、円の直径(radius*2)に合わせます
                 // 100という数字を、実際の画像のピクセル数（例えば50など）に調整するとより正確です
-                xScale: (data.radius * 2) / 100, 
-                yScale: (data.radius * 2) / 100
+                xScale: (data.radius * 2) / 50, 
+                yScale: (data.radius * 2) / 50
             }
         }
     });
@@ -151,6 +151,7 @@ function createFrog(x, y, level) {
 </body>
 
 </html>
+
 
 
 
