@@ -39,6 +39,13 @@
         ];
 
         const engine = Engine.create();
+
+// 【ここを追加！】重力を通常の2.5倍に強めます
+engine.world.gravity.y = 2.5; 
+
+const render = Render.create({
+// ... 以下そのまま ...
+
         const render = Render.create({
             element: document.body,
             engine: engine,
@@ -100,7 +107,7 @@
           setTimeout(() => { 
               currentLevel = Math.floor(Math.random() * 3);
               isClickable = true; 
-          }, 800);
+          }, 400);
       }
 
         Events.on(engine, 'collisionStart', (event) => {
@@ -136,4 +143,5 @@
     </script>
 </body>
 </html>
+
 
